@@ -1,9 +1,11 @@
 <template>
-    <div id="quote">
-        <Quote :quote="quote"></Quote>
-    </div>
-    <div id="answers">
-        <Answer v-for="answer in answers" :key="answer" :author="answer"></Answer>
+    <div>
+        <div id="quote">
+            <Quote :quote="quote"></Quote>
+        </div>
+        <div id="answers">
+            <Answer v-for="answer in answers" :key="answer" :author="answer"></Answer>
+        </div>
     </div>
 </template>
 
