@@ -20,7 +20,7 @@ export default {
 
 <style>
 :root {
-  background-color: #252525;
+  background: url(../public/bg.png);
 }
 #app {
   font-family: Helvetica, Arial, sans-serif;
