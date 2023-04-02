@@ -1,26 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Header></Header>
+  <div id="quiz">
+    <Quiz></Quiz>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Quiz from "./components/Quiz.vue";
+import Header from "./components/Header.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Quiz,
+    Header
   }
 }
 </script>
 
 <style>
+:root {
+  background: url(../public/bg.png);
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+a {
+  transition: ease-in-out .2s;
+}
+
+#quiz {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a:hover {
+  color: #ffff88;
 }
 </style>
