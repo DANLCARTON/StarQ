@@ -1,9 +1,9 @@
 <template>
     <header>
-        <h1>LPDADSM</h1>
+        <h1>StarQ!</h1>
         <nav>
             <a href="./index.html">Quizz</a>
-            <a href="//about.html">About</a>
+            <a href="./about.html">About</a>
         </nav>
     </header>
 </template>
@@ -25,7 +25,6 @@ export default {
         height: 50px;
         color: #252525;
         filter: drop-shadow(0 0 5px #00000088);
-        border-radius: 0 0 50px 50px;
     }
     h1 {
         position: absolute;
