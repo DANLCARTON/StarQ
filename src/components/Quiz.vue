@@ -6,7 +6,7 @@
         <div id="quote">
             <Quote :quote="quote">...please wait until the quote is displayed...</Quote>
         </div>
-        <div>
+        <div class="ans">
             <p class="answers" v-for="answer in answers" :key="answer" v-on:click="selectAnswer">{{ answer }}</p>
         </div>
     </div>
@@ -43,6 +43,7 @@ export default {
             this.answers[this.answers.indexOf(2)] = this.quoteData[0].author
             this.quoteData = await getQuote()
             this.answers[this.answers.indexOf(3)] = this.quoteData[0].author
+            document.getElementsByClassName("ans")[0].classList.add("loaded");
         },
         reset: function() {
             this.quoteData = []
@@ -50,6 +51,7 @@ export default {
             this.rightAnswer = ""
             this.answers = [0, 1, 2, 3].sort( () => .5 - Math.random() )
             this.retrieveQuoteData()
+            document.getElementsByClassName("ans")[0].classList.remove("loaded");
         },
         selectAnswer: function(event) {
             console.log(event.target.textContent, this.rightAnswer, event.target.textContent == this.rightAnswer)
@@ -62,6 +64,9 @@ export default {
             } else {
                 event.target.style.background  = "red"
                 --this.points
+                setTimeout(() => {
+                    this.reset()
+                }, 2000)
             }
         } 
     },
@@ -99,5 +104,13 @@ p.answers:hover {
 p.points {
     color: white; 
     font-size: 26px;
+}
+
+.ans {
+    display: none;
+}
+
+.loaded {
+    display:block;
 }
 </style>
